@@ -78,14 +78,6 @@ const TURKEY_SERVICES = [
     color: "bg-[#2B103A]",
   },
   {
-    emoji: "👨‍👩‍👧",
-    icon: Users,
-    title: "Parent",
-    desc: "Your child is studying abroad and you want to know they're okay. We offer check-ins, housing updates, and arrival confirmations — just for parents.",
-    href: "/turkey/student-services#parent",
-    color: "bg-[#2B103A]",
-  },
-  {
     emoji: "🌍",
     icon: Languages,
     title: "Translation",
@@ -100,6 +92,13 @@ const TURKEY_SERVICES = [
     desc: "Navigating Turkish admin can be confusing. We help you prepare documents, understand the process, and know what to expect.",
     href: "/turkey/paperwork",
     color: "bg-[#2B103A]",
+  },
+  {
+    emoji: "👨‍👩‍👧",
+    icon: Users,
+    title: "Parent",
+    desc: "Your child is studying in Saudi Arabia and you want to stay connected. We offer check-ins, housing confirmations, and regular updates — just for parents.",
+    href: "/saudi/student-services#parent",
   },
 ];
 

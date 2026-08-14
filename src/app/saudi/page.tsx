@@ -78,13 +78,6 @@ const SAUDI_SERVICES = [
     href: "/saudi/travel",
   },
   {
-    emoji: "👨‍👩‍👧",
-    icon: Users,
-    title: "Parent",
-    desc: "Your child is studying in Saudi Arabia and you want to stay connected. We offer check-ins, housing confirmations, and regular updates — just for parents.",
-    href: "/saudi/student-services#parent",
-  },
-  {
     emoji: "🌍",
     icon: Languages,
     title: "Translation",
@@ -97,6 +90,13 @@ const SAUDI_SERVICES = [
     title: "Paperwork",
     desc: "Saudi administrative processes can be complex. We help you understand what's needed, organize your documents, and navigate the steps — calmly.",
     href: "/saudi/paperwork",
+  },
+  {
+    emoji: "👨‍👩‍👧",
+    icon: Users,
+    title: "Parent",
+    desc: "Your child is studying in Saudi Arabia and you want to stay connected. We offer check-ins, housing confirmations, and regular updates — just for parents.",
+    href: "/saudi/student-services#parent",
   },
 ];
 
