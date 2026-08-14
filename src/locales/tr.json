@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Elit Konsiyerj ve Yönetim Platformu",
+    "title": "Türkiye'deki Yaşamınıza Uzanan Güvenilir Köprünüz",
+    "description": "Öğrenci, turist, aile veya işletme sahibi olun, taşınma ve konaklama sürecinizin her adımını yönetmek için buradayız.",
+    "studentBtn": "Öğrenciyim",
+    "travelBtn": "Seyahat Ediyorum",
+    "translationBtn": "Çeviriye İhtiyacım Var",
+    "businessBtn": "İşletmeyim",
+    "searchPlaceholder": "Bugün size nasıl yardımcı olabiliriz?",
+    "searchBtn": "Ara",
+    "suggestionsLabel": "Öneriler:"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "students": "Öğrenciler",
+    "travel": "Seyahat",
+    "translation": "Çeviri",
+    "business": "İş Dünyası",
+    "resources": "Kaynaklar",
+    "community": "Topluluk",
+    "contact": "İletişim",
+    "bookConsultation": "Danışmanlık Al"
+  },
+  "services": {
+    "title": "Popüler Hizmetler",
+    "learnMore": "Daha Fazla Bilgi",
+    "housing": {
+      "title": "Konaklama Desteği",
+      "desc": "İncelenmiş birinci sınıf kiralama yapıları ve işlemleri."
+    },
+    "airport": {
+      "title": "Havalimanı Karşılama",
+      "desc": "VIP terminalinden dairenize doğrudan özel transfer."
+    },
+    "sim": {
+      "title": "SIM Kart Kurulumu",
+      "desc": "Önceden kaydedilmiş yüksek hızlı veri planlarının anında kurulumu."
+    },
+    "translation": {
+      "title": "Çeviri",
+      "desc": "Yasal veya tıbbi varlıklar için yeminli yerel danışmanlar."
+    },
+    "permit": {
+      "title": "İkamet İzni Desteği",
+      "desc": "Yapısal evrak işlerinin uçtan uca yönetimi."
+    },
+    "emergency": {
+      "title": "Acil Destek",
+      "desc": "7/24 öncelikli çok dilli konsiyerj yanıtı."
+    }
+  }
+}

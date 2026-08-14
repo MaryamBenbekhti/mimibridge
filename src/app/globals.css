@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-plum: #2B103A;
+  --color-brand-ivory: #EFE7DA;
+  --color-brand-gold: #C8A96A;
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --radius-premium: 18px;
+}
+
+@utility glass-premium {
+  background: rgba(239, 231, 218, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(43, 16, 58, 0.08);
+}
+
+@utility glass-dark {
+  background: rgba(43, 16, 58, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(43, 16, 58, 0.05);
+}

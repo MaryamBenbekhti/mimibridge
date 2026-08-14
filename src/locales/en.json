@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Elite Concierge & Management Platform",
+    "title": "Your Trusted Bridge to Life in Turkey",
+    "description": "Whether you're a student, tourist, family, or business owner, we're here to manage every structural step of your relocation and stay.",
+    "studentBtn": "I'm a Student",
+    "travelBtn": "I'm Traveling",
+    "translationBtn": "I Need Translation",
+    "businessBtn": "I'm a Business",
+    "searchPlaceholder": "How can we help you today?",
+    "searchBtn": "Search",
+    "suggestionsLabel": "Suggestions:"
+  },
+  "nav": {
+    "home": "Home",
+    "students": "Students",
+    "travel": "Travel",
+    "translation": "Translation",
+    "business": "Business",
+    "resources": "Resources",
+    "community": "Community",
+    "contact": "Contact",
+    "bookConsultation": "Book Consultation"
+  },
+  "services": {
+    "title": "Popular Services",
+    "learnMore": "Learn More",
+    "housing": {
+      "title": "Housing Help",
+      "desc": "Premium vetted rental structures and processing."
+    },
+    "airport": {
+      "title": "Airport Pickup",
+      "desc": "Private VIP terminal pickup directly to your flat."
+    },
+    "sim": {
+      "title": "SIM Card Setup",
+      "desc": "Pre-registered high speed data plans instantly setup."
+    },
+    "translation": {
+      "title": "Translation",
+      "desc": "Certified native liaisons for legal or medical assets."
+    },
+    "permit": {
+      "title": "Residence Permit Help",
+      "desc": "End-to-end management of structural paperwork."
+    },
+    "emergency": {
+      "title": "Emergency Support",
+      "desc": "24/7 prioritized multilingual concierge response."
+    }
+  }
+}

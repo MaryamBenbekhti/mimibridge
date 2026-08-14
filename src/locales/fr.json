@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Plateforme d'élite de conciergerie et de gestion",
+    "title": "Votre pont de confiance vers la vie en Turquie",
+    "description": "Que vous soyez étudiant, touriste, famille ou chef d'entreprise, nous sommes là pour gérer chaque étape structurelle de votre déménagement et de votre séjour.",
+    "studentBtn": "Je suis étudiant",
+    "travelBtn": "Je voyage",
+    "translationBtn": "J'ai besoin de traduction",
+    "businessBtn": "Je suis une entreprise",
+    "searchPlaceholder": "Comment pouvons-nous vous aider aujourd'hui ?",
+    "searchBtn": "Rechercher",
+    "suggestionsLabel": "Suggestions :"
+  },
+  "nav": {
+    "home": "Accueil",
+    "students": "Étudiants",
+    "travel": "Voyage",
+    "translation": "Traduction",
+    "business": "Affaires",
+    "resources": "Ressources",
+    "community": "Communauté",
+    "contact": "Contact",
+    "bookConsultation": "Réserver une Consultation"
+  },
+  "services": {
+    "title": "Services Populaires",
+    "learnMore": "En Savoir Plus",
+    "housing": {
+      "title": "Aide au Logement",
+      "desc": "Structures de location haut de gamme vérifiées et traitement."
+    },
+    "airport": {
+      "title": "Accueil à l'Aéroport",
+      "desc": "Accueil privé au terminal VIP directement vers votre appartement."
+    },
+    "sim": {
+      "title": "Configuration Carte SIM",
+      "desc": "Forfaits de données haut débit préenregistrés configurés instantanément."
+    },
+    "translation": {
+      "title": "Traduction",
+      "desc": "Intermédiaires natifs certifiés pour les besoins juridiques ou médicaux."
+    },
+    "permit": {
+      "title": "Aide au Permis de Séjour",
+      "desc": "Gestion de bout en bout des démarches administratives."
+    },
+    "emergency": {
+      "title": "Assistance d'Urgence",
+      "desc": "Réponse de conciergerie multilingue prioritaire 24h/7j."
+    }
+  }
+}
