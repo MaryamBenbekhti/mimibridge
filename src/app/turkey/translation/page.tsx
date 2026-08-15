@@ -52,21 +52,13 @@ const TRANSLATION_SERVICES: ServiceItem[] = [
   {
     id: "s2",
     title: "Government Office",
-    desc: "Sworn companions for Immigration Directorate (Göç İdaresi), Tax Office (Vergi Dairesi), and Civil Registry (Nüfus) appointments.",
+    desc: "In-person translator for Immigration Directorate (Göç İdaresi), Tax Office (Vergi Dairesi), and Civil Registry (Nüfus) appointments.",
     icon: Building2,
     tags: ["Ikamet Companion", "Govt Appointments"],
     relevantPersonas: ["new_student", "current_student", "family"],
   },
   {
     id: "s3",
-    title: "University & Equivalence",
-    desc: "Certified sworn translations of diplomas, transcripts, high school certificates, and syllabus files for MEB Denklik.",
-    icon: GraduationCap,
-    tags: ["Academic Translation", "Denklik Ready"],
-    relevantPersonas: ["new_student", "parent"],
-  },
-  {
-    id: "s4",
     title: "Apartment & Real Estate",
     desc: "Translation of Turkish lease contracts, utility agreements, and land registry (Tapu) documentation.",
     icon: Home,
@@ -74,15 +66,7 @@ const TRANSLATION_SERVICES: ServiceItem[] = [
     relevantPersonas: ["current_student", "family", "business"],
   },
   {
-    id: "s5",
-    title: "Business Meeting",
-    desc: "High-level consecutive interpreters for corporate negotiations, supplier meetings, trade fairs, and factory visits.",
-    icon: Briefcase,
-    tags: ["Corporate Interpreter", "B2B Negotiations"],
-    relevantPersonas: ["business"],
-  },
-  {
-    id: "s6",
+    id: "s4",
     title: "Phone Call Assistance",
     desc: "Instant live phone call interpretation for setting up appointments, inquiring with landlords, or resolving customer service issues.",
     icon: Phone,
@@ -90,36 +74,12 @@ const TRANSLATION_SERVICES: ServiceItem[] = [
     relevantPersonas: ["new_student", "tourist", "current_student"],
   },
   {
-    id: "s7",
-    title: "Court Documents",
-    desc: "Official sworn court translations for legal powers of attorney, court verdicts, affidavits, and police clearance certificates.",
-    icon: Scale,
-    tags: ["Judicial Sworn", "Court Stamp"],
-    relevantPersonas: ["business", "family"],
-  },
-  {
-    id: "s8",
+    id: "s5",
     title: "Notary Legalization",
     desc: "Handling official Turkish Notary (Noter) legalization stamps and governorate Apostille validation for translated files.",
     icon: FileCheck2,
     tags: ["Noter Seal", "Apostille Stamp"],
     relevantPersonas: ["new_student", "business", "family"],
-  },
-  {
-    id: "s9",
-    title: "Certified Sworn Translation",
-    desc: "Stamped written translation guaranteed to be accepted by all official Turkish ministries, embassies, and universities.",
-    icon: FileText,
-    tags: ["Official Seal", "Fast Turnaround"],
-    relevantPersonas: ["new_student", "current_student", "business"],
-  },
-  {
-    id: "s10",
-    title: "Live Interpretation Escort",
-    desc: "Dedicated personal bilingual companion accompanying you for full-day or half-day official errands across major cities.",
-    icon: UserCheck,
-    tags: ["Full-Day Companion", "On-Ground Escort"],
-    relevantPersonas: ["tourist", "parent", "business", "family"],
   },
 ];
 
@@ -311,11 +271,10 @@ export default function TranslationPage() {
               <div
                 key={pair.id}
                 onClick={() => setSelectedLangPair(pair.id)}
-                className={`p-6 rounded-[24px] border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
-                  isSelected
+                className={`p-6 rounded-[24px] border transition-all duration-300 cursor-pointer flex flex-col justify-between ${isSelected
                     ? "bg-[#2B103A] text-[#EFE7DA] border-[#2B103A] shadow-xl scale-[1.02] ring-2 ring-[#C49A2A]"
                     : "bg-white/40 backdrop-blur-md border-[#2B103A]/10 text-[#2B103A] hover:border-[#C49A2A]"
-                }`}
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -500,11 +459,10 @@ export default function TranslationPage() {
           {TRANSLATION_PRICING.map((pkg, idx) => (
             <div
               key={idx}
-              className={`p-6 rounded-[24px] border flex flex-col justify-between transition-all duration-300 ${
-                pkg.popular
+              className={`p-6 rounded-[24px] border flex flex-col justify-between transition-all duration-300 ${pkg.popular
                   ? "bg-[#2B103A] text-[#EFE7DA] border-[#2B103A] shadow-xl scale-[1.03] ring-2 ring-[#C49A2A]"
                   : "bg-white/40 backdrop-blur-md border-[#2B103A]/10 text-[#2B103A] hover:border-[#C49A2A]"
-              }`}
+                }`}
             >
               <div>
                 {pkg.popular && (
@@ -549,11 +507,10 @@ export default function TranslationPage() {
 
               <Link
                 href="/journey-planner"
-                className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-center transition-all shadow-md block ${
-                  pkg.popular
+                className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-center transition-all shadow-md block ${pkg.popular
                     ? "bg-[#C49A2A] text-[#2B103A] hover:bg-[#d6aa35]"
                     : "bg-[#2B103A] text-[#EFE7DA] hover:bg-[#2B103A]/90"
-                }`}
+                  }`}
               >
                 {pkg.buttonText}
               </Link>
