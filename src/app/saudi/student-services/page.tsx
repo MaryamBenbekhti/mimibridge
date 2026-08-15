@@ -73,6 +73,8 @@ interface ServiceCard {
   icon: React.ElementType;
   title: string;
   desc: string;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 const NEW_STUDENT_SERVICES: ServiceCard[] = [
@@ -95,24 +97,59 @@ const CURRENT_STUDENT_SERVICES: ServiceCard[] = [
 ];
 
 const PARENT_SERVICES: ServiceCard[] = [
-  { icon: Video, title: "Student video check-in", desc: "A scheduled video call with your child so you can see and speak with them directly." },
-  { icon: Home, title: "Housing video check", desc: "A video walkthrough of your child's accommodation so you can see where they live." },
-  { icon: Plane, title: "Arrival update", desc: "A short update confirming your child has arrived safely and is beginning to settle in." },
-  { icon: Calendar, title: "Scheduled check-ins", desc: "Regular updates at a frequency that works for you — weekly, fortnightly, or monthly." },
-  { icon: Camera, title: "Photo & video updates", desc: "Photos or short videos of your child's surroundings when appropriate and agreed." },
-  { icon: Phone, title: "Parent contact support", desc: "A direct point of contact for parents who need to pass on a message or ask a question." },
+  {
+    icon: Video,
+    title: "Student Check-In",
+    desc: "A scheduled video call and check-in with the student by a fellow local student guide in Saudi Arabia. We say hello, check how their routine is going, and send you a friendly summary.",
+    ctaText: "Request Service",
+    ctaHref: "/contact?service=parent-video-checkin&dest=saudi",
+  },
+  {
+    icon: Home,
+    title: "Housing Check",
+    desc: "A video walkthrough and check-in of the student's campus dorm or flat. We give you a clear visual look at their living environment and air conditioning setup so you know they are comfortable.",
+    ctaText: "Request Service",
+    ctaHref: "/contact?service=parent-housing-check&dest=saudi",
+  },
+  {
+    icon: Plane,
+    title: "Arrival Update",
+    desc: "A quick, reassuring update directly to you once the student arrives safely in Saudi Arabia, gets their local SIM connected, and settles into their initial housing.",
+    ctaText: "Request Service",
+    ctaHref: "/contact?service=parent-update&dest=saudi",
+  },
+  {
+    icon: Calendar,
+    title: "Ongoing Updates",
+    desc: "Optional scheduled updates (e.g. monthly or per semester) tailored to give parents peace of mind throughout their studies in the Kingdom while respecting student independence.",
+    ctaText: "Learn More",
+    ctaHref: "/contact?service=parent-monthly&dest=saudi",
+  },
 ];
 
-function ServiceCardItem({ icon: Icon, title, desc }: ServiceCard) {
+function ServiceCardItem({ icon: Icon, title, desc, ctaText, ctaHref }: ServiceCard) {
   return (
-    <div className="bg-white/40 backdrop-blur-md p-5 rounded-[16px] border border-[#2B103A]/10 hover:border-emerald-700 transition-all duration-200 flex gap-4 items-start shadow-sm hover:shadow-md">
-      <div className="w-9 h-9 bg-emerald-900 text-[#C49A2A] rounded-[10px] flex items-center justify-center shrink-0 mt-0.5">
-        <Icon className="w-4 h-4" />
+    <div className="bg-white/40 backdrop-blur-md p-5 rounded-[18px] border border-[#2B103A]/10 hover:border-emerald-700 transition-all duration-200 flex flex-col justify-between shadow-sm hover:shadow-md group">
+      <div className="flex gap-4 items-start mb-3">
+        <div className="w-10 h-10 bg-emerald-900 text-[#C49A2A] rounded-[12px] flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+          <Icon className="w-5 h-5" />
+        </div>
+        <div>
+          <h4 className="font-semibold text-sm text-[#2B103A] mb-1">{title}</h4>
+          <p className="text-xs text-[#2B103A]/70 leading-relaxed">{desc}</p>
+        </div>
       </div>
-      <div>
-        <h4 className="font-semibold text-sm text-[#2B103A] mb-1">{title}</h4>
-        <p className="text-xs text-[#2B103A]/70 leading-relaxed">{desc}</p>
-      </div>
+      {ctaText && ctaHref && (
+        <div className="pt-3 border-t border-[#2B103A]/5 flex justify-end">
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 px-3.5 py-1.5 rounded-full transition-colors"
+          >
+            <span>{ctaText}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
@@ -188,35 +225,55 @@ export default function SaudiStudentServicesPage() {
 
       {/* SELECTED PERSONA CONTENT */}
       {selectedPersona && (
-        <div>
-          {/* Description */}
-          <div className="bg-[#2B103A]/5 border border-[#2B103A]/10 rounded-[20px] p-6 mb-8">
-            <div className="flex items-start gap-4">
-              <span className="text-4xl">{selectedPersona.emoji}</span>
-              <div>
-                <h2 className="font-serif text-xl font-bold text-[#2B103A] mb-2">
-                  {selectedPersona.title}
-                </h2>
-                <p className="text-sm text-[#2B103A]/70 leading-relaxed">
-                  {selectedPersona.description}
-                </p>
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
+          {/* Header banner for parent or standard description */}
+          {selected === "parent" ? (
+            <div className="bg-emerald-950 text-[#EFE7DA] border border-emerald-500/30 rounded-[24px] p-6 md:p-8 mb-6 relative overflow-hidden shadow-lg">
+              <div className="flex items-start gap-4">
+                <span className="text-4xl">👨‍👩‍👧</span>
+                <div>
+                  <span className="text-[11px] uppercase tracking-[0.25em] text-[#C49A2A] font-bold block mb-1">
+                    Parent Support
+                  </span>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#EFE7DA] mb-2 leading-tight">
+                    &ldquo;Your child is far away. You don&apos;t have to feel far away.&rdquo;
+                  </h2>
+                  <p className="text-xs md:text-sm text-[#EFE7DA]/85 leading-relaxed max-w-2xl">
+                    As students studying in Saudi Arabia, we understand how much peace of mind matters to families abroad. We offer friendly peer check-ins, campus accommodation video walkthroughs, and clear updates so you always feel close.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="bg-[#2B103A]/5 border border-[#2B103A]/10 rounded-[20px] p-6 mb-8">
+              <div className="flex items-start gap-4">
+                <span className="text-4xl">{selectedPersona.emoji}</span>
+                <div>
+                  <h2 className="font-serif text-xl font-bold text-[#2B103A] mb-2">
+                    {selectedPersona.title}
+                  </h2>
+                  <p className="text-sm text-[#2B103A]/70 leading-relaxed">
+                    {selectedPersona.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Parent disclaimer */}
           {selected === "parent" && (
-            <div className="bg-amber-50 border border-amber-200 rounded-[16px] p-4 mb-6 text-xs text-amber-900 leading-relaxed">
-              <strong>A note for parents:</strong> We provide friendly, practical support and
-              honest updates. We are not a professional supervision or monitoring service. All
-              updates are general and based on direct contact with your child.
+            <div className="bg-amber-50/90 border border-amber-200/80 rounded-[16px] p-4 mb-6 text-xs text-amber-900 leading-relaxed flex items-start gap-3">
+              <span className="shrink-0 text-sm">ℹ️</span>
+              <div>
+                <strong>A note for parents:</strong> Mimi Bridge is a student-run local support network. We offer friendly peer check-ins and practical updates with student consent. We do not provide emergency response, legal guardianship, or guaranteed physical supervision.
+              </div>
             </div>
           )}
 
           {/* Services grid */}
           <div className="mb-8">
             <p className="text-xs uppercase tracking-widest font-bold text-[#2B103A]/50 mb-4">
-              How we help
+              {selected === "parent" ? "Parent Services Available" : "How we help"}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {services.map((s) => (

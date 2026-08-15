@@ -94,8 +94,8 @@ const SAUDI_SERVICES = [
   {
     emoji: "👨‍👩‍👧",
     icon: Users,
-    title: "Parent",
-    desc: "Your child is studying in Saudi Arabia and you want to stay connected. We offer check-ins, housing confirmations, and regular updates — just for parents.",
+    title: "Parent Support",
+    desc: "Your child is far away. You don't have to feel far away. Scheduled check-ins, housing video walkthroughs, and arrival updates.",
     href: "/saudi/student-services#parent",
   },
 ];
