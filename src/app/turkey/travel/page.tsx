@@ -96,6 +96,7 @@ const CITY_GUIDES = [
     desc: "Historic Sultanahmet, luxury Bosphorus cruises, high-end shopping districts in Nisantasi, and vibrant university hubs.",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop&q=80",
     highlights: ["Hagia Sophia", "Bosphorus Cruise", "Grand Bazaar"],
+    href: "/turkey/cities/istanbul",
   },
   {
     name: "Ankara",
@@ -103,6 +104,7 @@ const CITY_GUIDES = [
     desc: "Government diplomatic quarter, Anıtkabir museum, top research universities, and diplomatic hospitality.",
     image: "https://bukaviyyehotel.com.tr/tema/genel/uploads/haberler/ankara-gezilecek-yerler.jpg",
     highlights: ["Anıtkabir", "Atakule", "Bilkent Hub"],
+    href: "/turkey/cities/ankara",
   },
   {
     name: "Karabük",
@@ -110,6 +112,7 @@ const CITY_GUIDES = [
     desc: "Lush pine forest mountains, scenic canyon walking routes, and peaceful nature retreats near historic Safranbolu.",
     image: "https://kuliahturki.id/wp-content/uploads/2025/06/101_Karabuk-University_Campus.jpg",
     highlights: ["Yenice Forests", "Canyon Walks", "Mountain Views"],
+    href: "/turkey/cities/karabuk",
   },
   {
     name: "Safranbolu",
@@ -117,6 +120,7 @@ const CITY_GUIDES = [
     desc: "Preserved Ottoman wooden mansions, crystal glass terraces, cobblestone bazaars, and traditional Turkish baths.",
     image: "https://bellimatur.com/upload/safranbolu%20kristal%20teras.jpg",
     highlights: ["Ottoman Mansions", "Kristal Teras", "Saffron Market"],
+    href: "/turkey/cities/karabuk",
   },
   {
     name: "Trabzon",
@@ -124,6 +128,7 @@ const CITY_GUIDES = [
     desc: "Sumela Monastery, Uzungöl mountain lake, coastal breezes, fresh seafood, and nature retreats.",
     image: "https://www.advantour.com/img/turkey/images/trabzon.jpg",
     highlights: ["Uzungöl", "Sumela Monastery", "Black Sea Coast"],
+    href: "/turkey/cities/trabzon",
   },
 ];
 
