@@ -5,15 +5,15 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar"; // Adjust path if your Navbar is in a different folder
-import { 
-  GraduationCap, 
-  Briefcase, 
-  Languages, 
-  Compass, 
-  ArrowRight, 
-  Building2, 
-  Palmtree, 
-  ShieldCheck, 
+import {
+  GraduationCap,
+  Briefcase,
+  Languages,
+  Compass,
+  ArrowRight,
+  Building2,
+  Palmtree,
+  ShieldCheck,
   MapPin,
   LucideIcon
 } from "lucide-react";
@@ -101,7 +101,7 @@ export default function GatewayPage() {
         <AnimatePresence mode="wait">
           {!selectedHub ? (
             /* PORTAL SELECTION VIEW */
-            <motion.div 
+            <motion.div
               key="gateway-selector"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -121,7 +121,7 @@ export default function GatewayPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 {/* TURKEY CARD */}
-                <div 
+                <div
                   onClick={() => handleHubSelect("turkey")}
                   className="group relative cursor-pointer p-8 md:p-12 rounded-[24px] border border-[#2B103A]/10 hover:border-[#C49A2A] transition-all duration-300 hover:shadow-2xl flex flex-col justify-between text-left overflow-hidden bg-white/40 backdrop-blur-md"
                 >
@@ -146,7 +146,7 @@ export default function GatewayPage() {
                 </div>
 
                 {/* SAUDI ARABIA CARD */}
-                <div 
+                <div
                   onClick={() => handleHubSelect("saudi")}
                   className="group relative cursor-pointer p-8 md:p-12 rounded-[24px] border border-[#2B103A]/10 hover:border-emerald-600 transition-all duration-300 hover:shadow-2xl flex flex-col justify-between text-left overflow-hidden bg-gradient-to-br from-white/40 to-emerald-900/5 backdrop-blur-md"
                 >
@@ -173,7 +173,7 @@ export default function GatewayPage() {
             </motion.div>
           ) : (
             /* SERVICE MATRIX VIEW */
-            <motion.div 
+            <motion.div
               key="service-hub"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -186,8 +186,8 @@ export default function GatewayPage() {
                   Active Corridor: {selectedHub === "turkey" ? "Destination Turkey" : "Destination Saudi Arabia"}
                 </span>
                 <h2 className="font-serif text-4xl font-bold">
-                  {selectedHub === "turkey" 
-                    ? "Everything You Need to Settle & Study in Turkey" 
+                  {selectedHub === "turkey"
+                    ? "Everything You Need to Settle & Study in Turkey"
                     : "On-Ground Professional Support in Saudi Arabia"}
                 </h2>
               </div>
@@ -209,7 +209,7 @@ export default function GatewayPage() {
               </div>
 
               <div className="text-center mt-12 flex justify-center space-x-4">
-                <button 
+                <button
                   onClick={() => setSelectedHub(null)}
                   className="border border-[#2B103A]/20 text-[#2B103A] px-6 py-4 rounded-full font-medium text-sm hover:border-[#C49A2A] transition-all cursor-pointer"
                 >
@@ -243,21 +243,19 @@ export default function GatewayPage() {
           <div className="inline-flex p-1.5 bg-[#2B103A]/5 rounded-full border border-[#2B103A]/10 self-start md:self-auto">
             <button
               onClick={() => setActiveCityCountry("turkey")}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeCityCountry === "turkey"
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${activeCityCountry === "turkey"
                   ? "bg-[#2B103A] text-[#EFE7DA] shadow-md"
                   : "text-[#2B103A]/70 hover:text-[#2B103A]"
-              }`}
+                }`}
             >
               Turkey 🇹🇷
             </button>
             <button
               onClick={() => setActiveCityCountry("saudi")}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeCityCountry === "saudi"
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${activeCityCountry === "saudi"
                   ? "bg-emerald-900 text-[#EFE7DA] shadow-md"
                   : "text-[#2B103A]/70 hover:text-[#2B103A]"
-              }`}
+                }`}
             >
               Saudi Arabia 🇸🇦
             </button>
@@ -296,11 +294,6 @@ export default function GatewayPage() {
                   <p className="text-xs text-[#EFE7DA]/80 line-clamp-2 mb-4 leading-relaxed">
                     {city.tagline}
                   </p>
-
-                  <button className="inline-flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold text-[#C49A2A] bg-[#EFE7DA]/10 hover:bg-[#EFE7DA]/20 backdrop-blur-md px-4 py-2 rounded-full transition-all border border-[#C49A2A]/30">
-                    <span>Explore City</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
                 </div>
               </div>
             </div>
