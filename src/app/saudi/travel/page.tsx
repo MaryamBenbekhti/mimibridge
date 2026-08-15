@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PersonaSelector, { PersonaType } from "@/components/PersonaSelector";
 import ServiceGrid, { ServiceItem } from "@/components/ServiceGrid";
 import CrossNav from "@/components/CrossNav";
 import Breadcrumbs from "@/components/UI/Breadcrumbs";
@@ -40,7 +39,7 @@ const AIRPORT_SERVICES: ServiceItem[] = [
     desc: "Personal driver greeting you inside arrivals with a personalized name sign at King Khalid (RUH), King Abdulaziz (JED), Prince Mohammad (MED), or King Fahd (DMM).",
     icon: Plane,
     tags: ["Flight Tracking", "Meet & Greet"],
-    relevantPersonas: ["tourist", "family", "parent", "new_student"],
+    relevantPersonas: ["tourist", "family", "business"],
   },
   {
     id: "ap2",
@@ -76,15 +75,15 @@ const ACCOMMODATION_SERVICES: ServiceItem[] = [
     desc: "Fully serviced residential suites in prime districts (KAFD Riyadh, Al-Rawdah Jeddah) with kitchens and concierge services for families and delegations.",
     icon: Building,
     tags: ["Serviced Suites", "Corporate Living"],
-    relevantPersonas: ["family", "business", "parent"],
+    relevantPersonas: ["family", "business", "tourist"],
   },
   {
     id: "ac3",
-    title: "Student & Visiting Family Stays",
-    desc: "Short-term furnished apartments and verified residences near major Saudi university campuses for incoming students and visiting parents.",
+    title: "Luxury Desert Resorts & Coastal Chalets",
+    desc: "Exclusive stays in AlUla starlit desert resorts, Red Sea coastal chalets, and private family compounds.",
     icon: Home,
-    tags: ["Near Universities", "Short / Long Term"],
-    relevantPersonas: ["new_student", "current_student", "parent"],
+    tags: ["Desert Resorts", "Private Chalets"],
+    relevantPersonas: ["family", "tourist"],
   },
 ];
 
@@ -159,7 +158,7 @@ const THINGS_TO_DO: ServiceItem[] = [
     desc: "Expert-led heritage tours exploring Diriyah, Al Masmak Fortress, Murabba Palace, and King Abdulaziz Historical Center.",
     icon: Landmark,
     tags: ["UNESCO Heritage", "Guided Tours"],
-    relevantPersonas: ["family", "tourist", "parent"],
+    relevantPersonas: ["family", "tourist"],
   },
   {
     id: "td5",
@@ -167,7 +166,7 @@ const THINGS_TO_DO: ServiceItem[] = [
     desc: "Full coordination for Umrah, Nusuk portal permits, Haramain High-Speed Train tickets, and spiritual ziyarah landmark tours in Makkah & Madinah.",
     icon: Eye,
     tags: ["Umrah Support", "Haramain Rail"],
-    relevantPersonas: ["tourist", "family", "parent"],
+    relevantPersonas: ["tourist", "family"],
   },
   {
     id: "td6",
@@ -286,8 +285,6 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 export default function SaudiTravelPage() {
-  const [activePersona, setActivePersona] = useState<PersonaType | null>(null);
-
   const scrollToPackages = (e: React.MouseEvent) => {
     e.preventDefault();
     const elem = document.getElementById("travel-packages");
@@ -337,9 +334,6 @@ export default function SaudiTravelPage() {
         </div>
       </div>
 
-      {/* SMART PERSONA SELECTOR */}
-      <PersonaSelector onPersonaChange={(p) => setActivePersona(p)} />
-
       {/* MAIN TWO-COLUMN CONTENT AREA WITH STICKY SIDEBAR ON DESKTOP */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         <div className="lg:col-span-8 space-y-16">
@@ -348,7 +342,6 @@ export default function SaudiTravelPage() {
             title="Airport & Executive Transit"
             subtitle="Meet & greet receptions, private chauffeur fleets, and seamless VIP terminal transit"
             items={AIRPORT_SERVICES}
-            activePersona={activePersona}
           />
 
           {/* ACCOMMODATION SERVICES */}
@@ -356,7 +349,6 @@ export default function SaudiTravelPage() {
             title="Luxury Accommodations"
             subtitle="Curated 5-star hotel reservations, executive residences, and family compound suites"
             items={ACCOMMODATION_SERVICES}
-            activePersona={activePersona}
           />
 
           {/* SAUDI CITY GUIDES */}
@@ -424,7 +416,6 @@ export default function SaudiTravelPage() {
             title="Experiences & Local Activities"
             subtitle="Historic UNESCO tours, culinary tastings, desert safaris, and spiritual journey coordination"
             items={THINGS_TO_DO}
-            activePersona={activePersona}
           />
 
           {/* TIMELINE */}

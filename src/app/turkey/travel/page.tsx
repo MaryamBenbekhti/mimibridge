@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import PersonaSelector, { PersonaType } from "@/components/PersonaSelector";
 import ServiceGrid, { ServiceItem } from "@/components/ServiceGrid";
 import CrossNav from "@/components/CrossNav";
 import Breadcrumbs from "@/components/UI/Breadcrumbs";
@@ -41,7 +40,7 @@ const AIRPORT_SERVICES: ServiceItem[] = [
     desc: "Personal driver greeting you inside terminal arrivals with a personalized name sign at IST, SAW, ESB, TZX, or NAV airports.",
     icon: Plane,
     tags: ["Flight Tracking", "Meet & Greet"],
-    relevantPersonas: ["tourist", "family", "parent", "new_student"],
+    relevantPersonas: ["tourist", "family", "business"],
   },
   {
     id: "ap2",
@@ -77,15 +76,15 @@ const ACCOMMODATION_SERVICES: ServiceItem[] = [
     desc: "Fully serviced luxury residences with kitchens, sea views, and concierge services for extended family or business stays.",
     icon: Building,
     tags: ["Serviced Suites", "Sea View"],
-    relevantPersonas: ["family", "business", "parent"],
+    relevantPersonas: ["family", "business", "tourist"],
   },
   {
     id: "ac3",
-    title: "Student Accommodation",
-    desc: "Short-term furnished suites or verified student residences for incoming students and visiting parents.",
+    title: "Villas & Holiday Homes",
+    desc: "Private luxury villas in Sapanca, Bodrum, and coastal Black Sea with private pools and scenic mountain views.",
     icon: Home,
-    tags: ["Near Campus", "Short/Long Term"],
-    relevantPersonas: ["new_student", "current_student", "parent"],
+    tags: ["Private Villas", "Holiday Homes"],
+    relevantPersonas: ["family", "tourist"],
   },
 ];
 
@@ -107,10 +106,10 @@ const CITY_GUIDES = [
   },
   {
     name: "Karabük",
-    tagline: "Academic University City",
-    desc: "Fast-growing student city surrounding Karabük University with affordable living and lush pine forest mountains.",
+    tagline: "Scenic Mountain & Nature Valley",
+    desc: "Lush pine forest mountains, scenic canyon walking routes, and peaceful nature retreats near historic Safranbolu.",
     image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&auto=format&fit=crop&q=80",
-    highlights: ["KBÜ Campus", "Canyon Walks", "Student Cafes"],
+    highlights: ["Yenice Forests", "Canyon Walks", "Mountain Views"],
   },
   {
     name: "Safranbolu",
@@ -167,7 +166,7 @@ const THINGS_TO_DO: ServiceItem[] = [
     desc: "Respectful guided visits to Sultanahmet, Süleymaniye, Çamlıca Mosque, and historic Islamic landmarks.",
     icon: Landmark,
     tags: ["Islamic Heritage", "Guided Tours"],
-    relevantPersonas: ["family", "tourist", "parent"],
+    relevantPersonas: ["family", "tourist"],
   },
   {
     id: "td5",
@@ -287,15 +286,14 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: "Bader Al-Hajri",
-    role: "Parent & Tourist",
+    role: "Family Vacationer",
     cityOrUni: "Trabzon & Uzungöl",
-    quote: "We visited Trabzon to inspect university options for my son while enjoying the Black Sea nature. Exceptional airport pickup and tour organization.",
+    quote: "We visited Trabzon with our family to enjoy the Black Sea nature and mountain views. Exceptional airport pickup, wonderful vehicle, and seamless tour organization.",
     rating: 5,
   },
 ];
 
 export default function TravelPage() {
-  const [activePersona, setActivePersona] = useState<PersonaType | null>(null);
   const [guideCity, setGuideCity] = useState("Istanbul");
   const [guideDate, setGuideDate] = useState("");
   const [guideSubmitted, setGuideSubmitted] = useState(false);
@@ -352,9 +350,6 @@ export default function TravelPage() {
         </div>
       </div>
 
-      {/* SMART PERSONA SELECTOR */}
-      <PersonaSelector onPersonaChange={(p) => setActivePersona(p)} />
-
       {/* MAIN LAYOUT WITH STICKY SIDEBAR ON DESKTOP */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         <div className="lg:col-span-8 space-y-16">
@@ -363,15 +358,13 @@ export default function TravelPage() {
             title="Airport Services"
             subtitle="VIP airport reception, private driver transfers, and luxury fleet transit"
             items={AIRPORT_SERVICES}
-            activePersona={activePersona}
           />
 
           {/* SECTION 2: ACCOMMODATION */}
           <ServiceGrid
             title="Accommodation"
-            subtitle="Handpicked 5-star hotels, luxury serviced apartments, and student suites"
+            subtitle="Handpicked 5-star hotels, luxury serviced apartments, and private holiday villas"
             items={ACCOMMODATION_SERVICES}
-            activePersona={activePersona}
           />
 
           {/* SECTION 3: CITY GUIDES */}
@@ -382,7 +375,7 @@ export default function TravelPage() {
               </span>
               <h2 className="font-serif text-3xl font-bold text-[#2B103A]">Focus City Guides</h2>
               <p className="text-xs md:text-sm text-[#2B103A]/70 mt-1">
-                Explore key cultural, academic, and scenic hubs across Turkey with local experts.
+                Explore key cultural, historic, and scenic hubs across Turkey with local experts.
               </p>
             </div>
 
@@ -432,7 +425,6 @@ export default function TravelPage() {
             title="Things To Do"
             subtitle="Curated dining, luxury shopping, historic mosques, museums, and family activities"
             items={THINGS_TO_DO}
-            activePersona={activePersona}
           />
 
           {/* BOOK LOCAL GUIDE INTERACTIVE SECTION */}
