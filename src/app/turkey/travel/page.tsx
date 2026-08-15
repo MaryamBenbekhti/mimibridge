@@ -108,7 +108,7 @@ const CITY_GUIDES = [
     name: "Karabük",
     tagline: "Scenic Mountain & Nature Valley",
     desc: "Lush pine forest mountains, scenic canyon walking routes, and peaceful nature retreats near historic Safranbolu.",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&auto=format&fit=crop&q=80",
+    image: "https://kuliahturki.id/wp-content/uploads/2025/06/101_Karabuk-University_Campus.jpg",
     highlights: ["Yenice Forests", "Canyon Walks", "Mountain Views"],
   },
   {
@@ -124,13 +124,6 @@ const CITY_GUIDES = [
     desc: "Sumela Monastery, Uzungöl mountain lake, coastal breezes, fresh seafood, and nature retreats.",
     image: "https://www.advantour.com/img/turkey/images/trabzon.jpg",
     highlights: ["Uzungöl", "Sumela Monastery", "Black Sea Coast"],
-  },
-  {
-    name: "Cappadocia",
-    tagline: "Fairytale Caves & Hot Air Balloons",
-    desc: "Sunrise hot air balloon rides, ancient underground cities, cave hotels, and majestic volcanic valleys.",
-    image: "https://images.unsplash.com/photo-1609856878074-cf31e21ccb6b?w=800&auto=format&fit=crop&q=80",
-    highlights: ["Hot Air Balloons", "Göreme Caves", "Red Valley"],
   },
 ];
 
@@ -543,11 +536,10 @@ export default function TravelPage() {
           {TRAVEL_PACKAGES.map((pkg, idx) => (
             <div
               key={idx}
-              className={`p-6 rounded-[24px] border flex flex-col justify-between transition-all duration-300 ${
-                pkg.popular
-                  ? "bg-[#2B103A] text-[#EFE7DA] border-[#2B103A] shadow-xl scale-[1.03] ring-2 ring-[#C49A2A]"
-                  : "bg-white/40 backdrop-blur-md border-[#2B103A]/10 text-[#2B103A] hover:border-[#C49A2A]"
-              }`}
+              className={`p-6 rounded-[24px] border flex flex-col justify-between transition-all duration-300 ${pkg.popular
+                ? "bg-[#2B103A] text-[#EFE7DA] border-[#2B103A] shadow-xl scale-[1.03] ring-2 ring-[#C49A2A]"
+                : "bg-white/40 backdrop-blur-md border-[#2B103A]/10 text-[#2B103A] hover:border-[#C49A2A]"
+                }`}
             >
               <div>
                 {pkg.popular && (
@@ -582,11 +574,10 @@ export default function TravelPage() {
 
               <Link
                 href="/journey-planner"
-                className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-center transition-all shadow-md block ${
-                  pkg.popular
-                    ? "bg-[#C49A2A] text-[#2B103A] hover:bg-[#d6aa35]"
-                    : "bg-[#2B103A] text-[#EFE7DA] hover:bg-[#2B103A]/90"
-                }`}
+                className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-center transition-all shadow-md block ${pkg.popular
+                  ? "bg-[#C49A2A] text-[#2B103A] hover:bg-[#d6aa35]"
+                  : "bg-[#2B103A] text-[#EFE7DA] hover:bg-[#2B103A]/90"
+                  }`}
               >
                 {pkg.buttonText}
               </Link>
