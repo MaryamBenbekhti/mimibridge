@@ -329,6 +329,9 @@ export default function TurkeyStudentServicesPage() {
         <Link href="/turkey" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
           ← Back to Turkey
         </Link>
+        <Link href="/turkey/parent" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
+          Parent Support
+        </Link>
         <span className="text-[#2B103A]/20">|</span>
         <Link href="/turkey/translation" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
           Translation Services

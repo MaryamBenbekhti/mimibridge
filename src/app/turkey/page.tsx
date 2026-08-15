@@ -98,7 +98,7 @@ const TURKEY_SERVICES = [
     icon: Users,
     title: "Parent Support",
     desc: "Your child is far away. You don't have to feel far away. Scheduled check-ins, housing video walkthroughs, and arrival updates.",
-    href: "/turkey/student-services#parent",
+    href: "/turkey/parent",
     color: "bg-[#2B103A]",
   },
 ];

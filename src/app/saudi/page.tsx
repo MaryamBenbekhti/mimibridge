@@ -96,7 +96,7 @@ const SAUDI_SERVICES = [
     icon: Users,
     title: "Parent Support",
     desc: "Your child is far away. You don't have to feel far away. Scheduled check-ins, housing video walkthroughs, and arrival updates.",
-    href: "/saudi/student-services#parent",
+    href: "/saudi/parent",
   },
 ];
 
