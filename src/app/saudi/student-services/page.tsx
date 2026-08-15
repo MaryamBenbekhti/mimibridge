@@ -327,6 +327,9 @@ export default function SaudiStudentServicesPage() {
         <Link href="/saudi" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
           ← Back to Saudi Arabia
         </Link>
+        <Link href="/saudi/parent" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
+          Parent Support
+        </Link>
         <span className="text-[#2B103A]/20">|</span>
         <Link href="/saudi/translation" className="text-xs text-[#2B103A]/60 hover:text-[#2B103A] transition-colors">
           Translation Services
